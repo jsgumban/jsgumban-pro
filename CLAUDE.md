@@ -7,11 +7,10 @@ A complete full-stack application built with Express.js backend, Next.js fronten
 ```
 .
 ├── backend/           # Express.js API server
-│   ├── src/
-│   │   ├── config/    # Supabase configuration
-│   │   ├── middleware/# Authentication middleware
-│   │   ├── routes/    # API routes
-│   │   └── index.js   # Server entry point
+│   ├── config/        # Supabase configuration
+│   ├── middleware/    # Authentication middleware
+│   ├── routes/        # API routes
+│   ├── index.js       # Server entry point
 │   ├── package.json
 │   └── .env.example
 ├── frontend/          # Next.js React application
@@ -205,10 +204,11 @@ profiles {
 ## 🚀 Deployment
 
 ### Backend Deployment Options
-1. **Vercel/Netlify Functions** - Serverless deployment
-2. **Railway/Render** - Container-based deployment
-3. **DigitalOcean App Platform** - Managed container deployment
+1. **Railway/Render** - Container-based deployment
+2. **DigitalOcean App Platform** - Managed container deployment
+3. **Heroku** - Platform-as-a-Service deployment
 4. **AWS/GCP/Azure** - Cloud provider deployment
+5. **VPS/Docker** - Self-hosted deployment
 
 ### Frontend Deployment
 1. **Vercel** (recommended for Next.js)
@@ -271,11 +271,11 @@ Set `NODE_ENV=development` to see detailed error messages.
 ## 📚 Key Files Reference
 
 ### Backend Key Files
-- `backend/src/index.js` - Main server file
-- `backend/src/config/supabase.js` - Supabase client setup
-- `backend/src/middleware/auth.js` - JWT authentication middleware
-- `backend/src/routes/auth.js` - **Authentication endpoints (register, login, logout)**
-- `backend/src/routes/protected.js` - Protected API routes
+- `backend/index.js` - Main server file
+- `backend/config/supabase.js` - Supabase client setup
+- `backend/middleware/auth.js` - JWT authentication middleware
+- `backend/routes/auth.js` - **Authentication endpoints (register, login, logout)**
+- `backend/routes/protected.js` - Protected API routes
 
 ### Frontend Key Files
 - `frontend/src/app/layout.tsx` - Root layout with Redux provider and navbar
@@ -293,8 +293,8 @@ Set `NODE_ENV=development` to see detailed error messages.
 ## 🔄 Adding New Features
 
 ### Adding a New API Route
-1. Create route file in `backend/src/routes/`
-2. Import and use in `backend/src/index.js`
+1. Create route file in `backend/routes/`
+2. Import and use in `backend/index.js`
 3. Add authentication middleware if needed
 
 ### Adding a New Page

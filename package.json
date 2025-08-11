@@ -3,18 +3,16 @@
   "version": "1.0.0",
   "description": "Full-stack monorepo with Express.js backend and Next.js frontend using Supabase",
   "private": true,
-  "workspaces": [
-    "backend",
-    "frontend"
-  ],
   "scripts": {
-    "dev": "concurrently \"npm run dev --workspace=backend\" \"npm run dev --workspace=frontend\"",
-    "dev:backend": "npm run dev --workspace=backend",
-    "dev:frontend": "npm run dev --workspace=frontend",
-    "build": "npm run build --workspace=backend && npm run build --workspace=frontend",
-    "start": "concurrently \"npm run start --workspace=backend\" \"npm run start --workspace=frontend\"",
+    "dev": "concurrently \"cd backend && npm run dev\" \"cd frontend && npm run dev\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "start": "cd frontend && npm run start",
+    "install:all": "cd backend && npm install && cd ../frontend && npm install",
     "clean": "rm -rf node_modules backend/node_modules frontend/node_modules"
   },
+  "dependencies": {},
   "devDependencies": {
     "concurrently": "^8.2.2"
   },

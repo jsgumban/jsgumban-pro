@@ -31,7 +31,7 @@ export function useAuth() {
           const session = JSON.parse(storedSession)
           
           // Verify session with backend
-          const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5555'
+          const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
           const response = await fetch(`${apiUrl}/auth/verify`, {
             headers: {
               'Authorization': `Bearer ${session.access_token}`,
@@ -89,7 +89,7 @@ export function useAuth() {
       dispatch(setLoading(true))
       dispatch(clearError())
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5555'
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
       const response = await fetch(`${apiUrl}/auth/login`, {
         method: 'POST',
         headers: {
@@ -122,7 +122,7 @@ export function useAuth() {
       dispatch(setLoading(true))
       dispatch(clearError())
 
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5555'
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
       const response = await fetch(`${apiUrl}/auth/register`, {
         method: 'POST',
         headers: {
@@ -154,7 +154,7 @@ export function useAuth() {
     try {
       dispatch(setLoading(true))
       
-      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5555'
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5000'
       
       if (session?.access_token) {
         await fetch(`${apiUrl}/auth/logout`, {
